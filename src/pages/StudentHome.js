@@ -44,9 +44,9 @@ function Students() {
                                 <thead>
                                     <tr>
                                         <th>Student Name</th>
-                                        <th>Email</th>
-                                        <th>DOB</th>
-                                        <th>Gender</th>
+                                        <th className="d-none d-sm-table-cell">Email</th>
+                                        <th className="d-none d-sm-table-cell">DOB</th>
+                                        <th className="d-none d-sm-table-cell">Gender</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -54,12 +54,12 @@ function Students() {
                                     {students?.map((student, index) => (
                                         <tr key={index}>
                                             <td>{student.student_name}</td>
-                                            <td>{student.email}</td>
-                                            <td>{student.date_of_birthdate}</td>
-                                            <td>{student.gender}</td>
+                                            <td className="d-none d-sm-table-cell">{student.email}</td>
+                                            <td className="d-none d-sm-table-cell">{student.date_of_birthdate}</td>
+                                            <td className="d-none d-sm-table-cell">{student.gender}</td>
                                             <td>
                                                 <Button variant="warning" size="sm" onClick={() => handleEdit(student.id)}><i className="bi bi-pencil-fill"></i></Button>{' '}
-                                                <Button variant="danger" size="sm" onClick={() => handleDelete(student.id)}><i className="bi bi-trash-fill"></i></Button>
+                                                <Button variant="danger" size="sm" className="mt-0 sm-mt-2" onClick={() => handleDelete(student.id)}><i className="bi bi-trash-fill"></i></Button>
                                             </td>
                                         </tr>
                                     ))}
